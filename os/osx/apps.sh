@@ -6,42 +6,20 @@ set -e
 
 # Apps
 apps=(
-  alfred
   dropbox
   google-chrome
-  qlcolorcode
-  screenflick
+  google-chrome-canary
   slack
   transmit
-  appcleaner
   firefox
-  hazel
-  qlmarkdown
-  seil
   spotify
-  vagrant
-  arq
   flash
-  iterm2
-  qlprettypatch
-  shiori
   sublime-text3
-  virtualbox
-  atom
-  flux
-  mailbox
-  qlstephen
-  sketch
-  tower
   vlc
-  cloudup
-  font-m-plus
-  nvalt
-  quicklook-json
   skype
-  transmission
-  apikitchen
-  mamp
+  utorrent
+  divvy
+  cyberduck
 )
 
 # fonts
@@ -49,6 +27,7 @@ fonts=(
   font-m-plus
   font-clear-sans
   font-roboto
+  font-open-sans
 )
 
 # Specify the location of the apps
@@ -67,8 +46,7 @@ main() {
 
   # Install homebrew-cask
   echo "installing cask..."
-  brew tap phinze/homebrew-cask
-  brew install brew-cask
+  brew install caskroom/cask/brew-cask
 
   # Tap alternative versions
   brew tap caskroom/versions
@@ -84,8 +62,6 @@ main() {
   echo "installing fonts..."
   brew cask install ${fonts[@]}
 
-  # link with alfred
-  alfred
   cleanup
 }
 
@@ -96,12 +72,8 @@ homebrew() {
   fi
 }
 
-alfred() {
-  brew cask alfred link
-}
-
 cleanup() {
-  brew cleanup
+  brew cask cleanup
 }
 
 main "$@"
