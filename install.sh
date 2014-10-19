@@ -4,6 +4,8 @@ dirname=$(pwd)
 lib="/usr/local/lib"
 bin="/usr/local/bin"
 
+sudo mkdir "/usr/local"
+
 # make in case they aren't already there
 mkdir -p "/usr/local/lib"
 mkdir -p "/usr/local/bin"
